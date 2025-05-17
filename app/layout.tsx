@@ -1,0 +1,35 @@
+import type React from "react"
+import "@/app/globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { SidebarProvider } from "@/components/ui/sidebar"
+import { Toaster } from "@/components/ui/toaster"
+import { ReduxProvider } from "@/lib/redux/provider"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "Joura_Pothole Admin Dashboard",
+  description: "Admin dashboard for managing infrastructure issue reports"
+  
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ReduxProvider>
+            <SidebarProvider defaultOpen={true}>{children}</SidebarProvider>
+          </ReduxProvider>
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
