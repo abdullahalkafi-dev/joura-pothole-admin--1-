@@ -44,7 +44,7 @@ interface GetReportsParams {
   issue?: string
   severityLevel?: string
   status?: string
-  search?: string
+  searchTerm?: string
   sortBy?: string
   sortOrder?: "asc" | "desc"
 }
@@ -79,7 +79,7 @@ export const reportsApi = createApi({
         if (params.issue) queryParams.append("issue", params.issue)
         if (params.severityLevel) queryParams.append("severityLevel", params.severityLevel)
         if (params.status) queryParams.append("status", params.status)
-        if (params.search) queryParams.append("search", params.search)
+        if (params.searchTerm) queryParams.append("searchTerm", params.searchTerm)
         if (params.sortBy) queryParams.append("sortBy", params.sortBy)
         if (params.sortOrder) queryParams.append("sortOrder", params.sortOrder)
 

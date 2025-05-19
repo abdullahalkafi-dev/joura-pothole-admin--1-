@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { DonutChart, PieChart } from "@tremor/react"
+import { DonutChart } from "@tremor/react"
 
 interface IssueTypeData {
   name: string
@@ -60,7 +60,7 @@ export function IssueTypeDistribution({ data, isLoading }: IssueTypeDistribution
           </TabsContent>
 
           <TabsContent value="pie" className="flex justify-center">
-            <PieChart
+            <DonutChart
               className="h-[250px] w-[250px]"
               data={data || []}
               category="value"
@@ -68,6 +68,8 @@ export function IssueTypeDistribution({ data, isLoading }: IssueTypeDistribution
               valueFormatter={valueFormatter}
               colors={["blue", "cyan", "indigo", "violet"]}
               showAnimation
+              showTooltip={false}
+              variant="pie"
             />
           </TabsContent>
         </Tabs>

@@ -22,7 +22,7 @@ export function ReportsTable() {
   const issue = searchParams.get("issue") || undefined
   const severity = searchParams.get("severity") || undefined
   const status = searchParams.get("status") || undefined
-  const search = searchParams.get("search") || undefined
+  const searchTerm = searchParams.get("searchTerm") || undefined
 
   const [sortBy, setSortBy] = useState("createdAt")
   const [sortOrder, setSortOrder] = useState("desc")
@@ -33,7 +33,7 @@ export function ReportsTable() {
     issue,
     severityLevel: severity,
     status,
-    search,
+    searchTerm,
     sortBy,
     sortOrder,
   })

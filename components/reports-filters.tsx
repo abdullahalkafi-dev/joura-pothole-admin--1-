@@ -16,7 +16,7 @@ export function ReportsFilters() {
   const [issueType, setIssueType] = useState(searchParams.get("issue") || "")
   const [severity, setSeverity] = useState(searchParams.get("severity") || "")
   const [status, setStatus] = useState(searchParams.get("status") || "")
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "")
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("searchTerm") || "")
 
   const applyFilters = () => {
     const params = new URLSearchParams()
@@ -24,7 +24,7 @@ export function ReportsFilters() {
     if (issueType) params.set("issue", issueType)
     if (severity) params.set("severity", severity)
     if (status) params.set("status", status)
-    if (searchQuery) params.set("search", searchQuery)
+    if (searchQuery) params.set("searchTerm", searchQuery)
 
     router.push(`${pathname}?${params.toString()}`)
   }
