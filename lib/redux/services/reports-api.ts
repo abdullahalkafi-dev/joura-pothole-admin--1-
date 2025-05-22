@@ -8,6 +8,7 @@ interface Report {
     coordinates: [number, number]
     address: string
   }
+  user:any
   description: string
   images: string[]
   videos: string[]
@@ -25,19 +26,6 @@ interface Report {
 
 
 
-interface StatsResponse {
-  data: {
-    totalReports: number
-    pendingReports: number
-    inProgressReports: number
-    completedReports: number
-    rejectedReports: number
-  }
-  success: boolean
-  message: string
-  statusCode: number
-}
-
 interface GetReportsParams {
   page?: number
   limit?: number
@@ -49,11 +37,6 @@ interface GetReportsParams {
   sortOrder?: "asc" | "desc"
 }
 
-interface UpdateStatusParams {
-  id: string
-  status: string
-  comment?: string
-}
 
 export const reportsApi = createApi({
   reducerPath: "reportsApi",
@@ -106,22 +89,13 @@ export const reportsApi = createApi({
       transformResponse: (response: any) => response.data,
     }),
 
-    getStats: builder.query<
-      {
-        totalReports: number
-        pendingReports: number
-        inProgressReports: number
-        completedReports: number
-        rejectedReports: number
-      },
-      void
-    >({
+    getStats: builder.query({
       query: () => "/pothole/stats",
       providesTags: ["Stats"],
-      transformResponse: (response: StatsResponse) => response.data,
+      transformResponse: (response: any) => response.data,
     }),
 
-    updateReportStatus: builder.mutation<void, UpdateStatusParams>({
+    updateReportStatus: builder.mutation({
       query: ({ id, status, comment }) => ({
         url: `/pothole/${id}/status`,
         method: "PATCH",

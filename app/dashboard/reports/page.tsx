@@ -1,6 +1,18 @@
+"use client"
 import { DashboardHeader } from "@/components/dashboard-header"
-import { ReportsFilters } from "@/components/reports-filters"
-import { ReportsTable } from "@/components/reports-table"
+// import { ReportsFilters } from "@/components/reports-filters"
+// import { ReportsTable } from "@/components/reports-table"
+import dynamic from "next/dynamic"
+
+const ReportsFilters  =dynamic(
+  () => import("@/components/reports-filters").then((mod) => mod.ReportsFilters),
+  { ssr: false }
+)
+const ReportsTable = dynamic(
+  () => import("@/components/reports-table").then((mod) => mod.ReportsTable),
+  { ssr: false }
+)
+
 
 export default function ReportsPage() {
   return (

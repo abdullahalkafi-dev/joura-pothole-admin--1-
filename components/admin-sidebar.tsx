@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { useLogoutMutation } from "@/lib/redux/services/auth-api"
 import { toast } from "@/components/ui/use-toast"
-
+import Cookies from "js-cookie"
 export function AdminSidebar() {
   const pathname = usePathname()
   const router = useRouter()
@@ -46,7 +46,9 @@ export function AdminSidebar() {
 
   const handleLogout = async () => {
     try {
-      await logout().unwrap()
+   
+       Cookies.remove("token") // Remove the access token from cookies
+  
       router.push("/login")
       toast({
         title: "Logged out successfully",
@@ -108,14 +110,14 @@ export function AdminSidebar() {
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
-            <SidebarMenuItem>
+            {/* <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={isActive("/dashboard/analytics")}>
                 <Link href="/dashboard/analytics">
                   <BarChart3 className="h-4 w-4" />
                   <span>Analytics</span>
                 </Link>
               </SidebarMenuButton>
-            </SidebarMenuItem>
+            </SidebarMenuItem> */}
             <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={isActive("/dashboard/users")}>
                 <Link href="/dashboard/users">
@@ -124,14 +126,14 @@ export function AdminSidebar() {
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
-            <SidebarMenuItem>
+            {/* <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={isActive("/dashboard/settings")}>
                 <Link href="/dashboard/settings">
                   <Settings className="h-4 w-4" />
                   <span>Settings</span>
                 </Link>
               </SidebarMenuButton>
-            </SidebarMenuItem>
+            </SidebarMenuItem> */}
           </SidebarMenu>
         </SidebarContent>
         <SidebarFooter className="border-t border-sidebar-border">

@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ReportStatusBadge } from "./report-status-badge"
 import { SeverityBadge } from "./severity-badge"
 import { format } from "date-fns"
-import { AlertCircle, Calendar, MapPin, User } from "lucide-react"
+import { AlertCircle, Calendar, MapPin, User, Verified } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
@@ -39,9 +39,10 @@ interface Report {
 
 interface ReportDetailProps {
   report: Report
+  verificationInfo:any
 }
 
-export function ReportDetail({ report }: ReportDetailProps) {
+export function ReportDetail({ report ,verificationInfo}: ReportDetailProps) {
   const [status, setStatus] = useState(report.status)
   const [comment, setComment] = useState("")
   const [updateStatus, { isLoading }] = useUpdateReportStatusMutation()
@@ -66,7 +67,7 @@ export function ReportDetail({ report }: ReportDetailProps) {
       })
     }
   }
-
+ console.log(verificationInfo ? verificationInfo?.data: null);
   return (
     <div className="grid gap-6 md:grid-cols-3">
       <div className="space-y-6 md:col-span-2">
@@ -114,7 +115,7 @@ export function ReportDetail({ report }: ReportDetailProps) {
             <div className="flex items-start gap-2">
               <Calendar className="h-5 w-5 text-muted-foreground mt-0.5" />
               <div>
-                <p className="font-medium">Timeline</p>
+                <p className="font-medium">Timeline </p>
                 <div className="mt-2 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 dark:bg-green-400" />
@@ -129,7 +130,30 @@ export function ReportDetail({ report }: ReportDetailProps) {
                 </div>
               </div>
             </div>
-
+            <div className="flex items-start gap-2">
+              <Verified className="h-5 w-5 text-muted-foreground mt-0.5" />
+              <div className=" ">
+                <p className="font-medium">Public Verification  , Total  {verificationInfo?.data?.totalVerifications}   </p>
+                <div className="mt-2 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-red-500 dark:bg-red-400" />
+                    <p className="text-sm"> No : {verificationInfo?.data?.statusCounts?.No ? verificationInfo?.data?.statusCounts?.No : "0"}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full  bg-green-500 dark:bg-green-400 " />
+                    <p className="text-sm">
+                     Yes: {verificationInfo?.data?.statusCounts?.Yes ? verificationInfo?.data?.statusCounts?.Yes : "0"}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full  bg-blue-500 dark:bg-blue-400 " />
+                    <p className="text-sm">
+                    I don't know: {verificationInfo ? verificationInfo?.data?.statusCounts?.["I don't know"] : "0"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <Separator />
 
             <div>

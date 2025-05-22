@@ -1,3 +1,4 @@
+"use client"
 import { DashboardHeader } from "@/components/dashboard-header"
 import { DashboardStats } from "@/components/dashboard-stats"
 import { RecentReports } from "@/components/recent-reports"
