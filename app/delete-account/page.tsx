@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, ArrowLeft, Shield, Eye, Lock, Trash2, AlertTriangle } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function DeletePage() {
@@ -25,13 +26,40 @@ export default function DeletePage() {
           </div>
         </div>
       </header>
+ 
 
+   
       {/* Privacy Policy Content */}
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Account deletion Policy</h1>
           </div>
+
+<div className="flex flex-col md:flex-row gap-8 justify-center mb-8">
+  <div className="flex-1">
+    <Image 
+    width={500}
+    height={800}
+      src="/accountDelete1.png" 
+      alt="Delete Account Step 1" 
+      className="rounded-lg shadow-md w-full h-auto max-w-sm mx-auto" 
+    />
+    <p className="text-center text-sm text-gray-500 mt-2">Profile screen with Delete Account option</p>
+  </div>
+  
+  <div className="flex-1">
+    <Image
+    width={500}
+    height={800} 
+      src="/accountDelete2.png" 
+      alt="Delete Account Confirmation" 
+      className="rounded-lg shadow-md w-full h-auto max-w-sm mx-auto" 
+    />
+    <p className="text-center text-sm text-gray-500 mt-2">Confirmation screen with warnings</p>
+  </div>
+</div>
+
 
           <div className="prose max-w-none">
         
@@ -40,8 +68,8 @@ export default function DeletePage() {
             {/* Account Deletion */}
             <Card className="mb-8">
               
-              <CardContent className="space-y-4">
-                <p className="text-gray-700 mb-4">
+              <CardContent className="space-y-4 py-5">
+                <p className="text-gray-700 dark:text-white mb-4">
                   Users may request account deletion at any time by following these steps in the Joura mobile app:
                 </p>
 
@@ -115,7 +143,7 @@ export default function DeletePage() {
                   </div>
                 </div>
 
-                <p className="text-gray-700 text-sm">
+                <p className="text-gray-700 dark:text-white  text-sm">
                   Account deletion requests are processed within 48 hours. If you need assistance with account deletion
                   or have questions about this process, please contact our support team before proceeding.
                 </p>
