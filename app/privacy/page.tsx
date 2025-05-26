@@ -14,7 +14,7 @@ export default function PrivacyPage() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-white" />
               </div>
-              <span className="text-2xl font-bold text-gray-900">Joura</span>
+              <span className="text-2xl text-black  font-bold ">Joura</span>
             </Link>
             <Link href="/">
               <Button variant="ghost" className="flex items-center space-x-2">
@@ -27,16 +27,16 @@ export default function PrivacyPage() {
       </header>
 
       {/* Privacy Policy Content */}
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8   py-12">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold  text-black mb-4">Privacy Policy</h1>
             <p className="text-lg text-gray-600">Effective Date: June 1, 2024</p>
           </div>
 
           <div className="prose max-w-none">
             <div className="mb-8">
-              <p className="text-gray-700 leading-relaxed">
+              <p className=" leading-relaxed text-black" >
                 Joura  is committed to protecting your privacy. This Privacy Policy explains how
                 we collect, use, disclose, and safeguard your information when you use the Joura mobile application (the
                 "App"). By using the App, you consent to the practices described in this policy.
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
             </div>
 
             {/* Information We Collect */}
-            <Card className="mb-8">
+            <Card className="mb-8 ">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Eye className="w-5 h-5 text-blue-600" />
@@ -52,23 +52,23 @@ export default function PrivacyPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">1.1 Personal Information:</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <div >
+                  <h4 className="font-semibold      mb-2">1.1 Personal Information:</h4>
+                  <ul className="list-disc list-inside   space-y-1">
                     <li>Email address (for account creation and support)</li>
                     <li>Location data (for reporting and viewing potholes)</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">1.2 Non-Personal Information:</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <h4 className="font-semibold   mb-2">1.2 Non-Personal Information:</h4>
+                  <ul className="list-disc     list-inside  space-y-1">
                     <li>Device type and operating system</li>
                     <li>App usage data (e.g., frequency of reporting)</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">1.3 Photos:</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <h4 className="font-semibold   mb-2">1.3 Photos:</h4>
+                  <ul className="list-disc list-inside      space-y-1">
                     <li>When voluntarily uploaded by users to accompany a report</li>
                   </ul>
                 </div>
@@ -78,13 +78,13 @@ export default function PrivacyPage() {
             {/* How We Use Your Information */}
             <Card className="mb-8">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
+                <CardTitle className="flex    items-center space-x-2">
                   <Shield className="w-5 h-5 text-blue-600" />
                   <span>2. How We Use Your Information</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <ul className="list-disc    list-inside  space-y-2">
                   <li>To allow users to report and view road hazards</li>
                   <li>To display reports on a map and track status</li>
                   <li>To contact users for support, feedback, or verification</li>
@@ -94,15 +94,15 @@ export default function PrivacyPage() {
             </Card>
 
             {/* How We Share Your Information */}
-            <Card className="mb-8">
+            <Card className="mb-8   ">
               <CardHeader>
                 <CardTitle>3. How We Share Your Information</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 mb-4">
+                <p className=" mb-4">
                   We do not sell or rent your personal information. We may share data:
                 </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <ul className="list-disc list-inside  space-y-2">
                   <li>With municipalities or NGOs to support road maintenance efforts</li>
                   <li>With third-party service providers (e.g., cloud hosting, analytics)</li>
                   <li>As required by law or to protect rights and safety</li>
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="">
                   We use commercially reasonable measures to protect your information. However, no system can guarantee
                   absolute security.
                 </p>
@@ -135,12 +135,12 @@ export default function PrivacyPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-700 mb-4">
+                <p className=" mb-4">
                   Users may request account deletion at any time by following these steps in the Joura mobile app:
                 </p>
 
                 <div className="bg-gray-50 p-6 rounded-lg space-y-4">
-                  <h4 className="font-semibold text-gray-900 mb-3">How to Delete Your Account:</h4>
+                  <h4 className="font-semibold  mb-3">How to Delete Your Account:</h4>
 
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
                         1
                       </div>
                       <div>
-                        <h5 className="font-medium text-gray-900">Go to Your Profile</h5>
+                        <h5 className="font-medium ">Go to Your Profile</h5>
                         <p className="text-gray-600 text-sm">
                           Open the Joura app and navigate to the "Profile" tab at the bottom of the screen. You'll see
                           your profile information including your name, email, and profile picture.
@@ -161,7 +161,7 @@ export default function PrivacyPage() {
                         2
                       </div>
                       <div>
-                        <h5 className="font-medium text-gray-900">Find "Delete Account" Option</h5>
+                        <h5 className="font-medium ">Find "Delete Account" Option</h5>
                         <p className="text-gray-600 text-sm">
                           Scroll down in your profile menu to find the "Delete Account" option. It will be displayed
                           with a trash can icon among other profile settings like Edit Profile, My Reports, Support, and
@@ -175,7 +175,7 @@ export default function PrivacyPage() {
                         3
                       </div>
                       <div>
-                        <h5 className="font-medium text-gray-900">Read the Notice and Confirm</h5>
+                        <h5 className="font-medium ">Read the Notice and Confirm</h5>
                         <p className="text-gray-600 text-sm">
                           If you want to delete your account, tap on "Delete Account" and carefully read all the notices
                           and warnings that appear. Once you understand the consequences, click on the delete
@@ -209,7 +209,7 @@ export default function PrivacyPage() {
                   </div>
                 </div>
 
-                <p className="text-gray-700 text-sm">
+                <p className=" text-sm">
                   Account deletion requests are processed within 48 hours. If you need assistance with account deletion
                   or have questions about this process, please contact our support team before proceeding.
                 </p>
@@ -222,7 +222,7 @@ export default function PrivacyPage() {
                 <CardTitle>6. Children's Privacy</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700">
+                <p className="">
                   The App is not intended for users under the age of 13. We do not knowingly collect data from children.
                 </p>
               </CardContent>
@@ -234,8 +234,8 @@ export default function PrivacyPage() {
                 <CardTitle>7. Your Rights</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 mb-4">You have the right to:</p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <p className=" mb-4">You have the right to:</p>
+                <ul className="list-disc list-inside  space-y-2">
                   <li>Access the data we store about you</li>
                   <li>Request correction or deletion of your data</li>
                   <li>Withdraw consent at any time by deleting your account</li>
@@ -249,11 +249,11 @@ export default function PrivacyPage() {
                 <CardTitle>8. Contact Us</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 mb-4">
+                <p className=" mb-4">
                   If you have questions or concerns about this policy, please contact us at:
                 </p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <ul className="text-gray-700 space-y-2">
+                <div className="bg-gray-50  text-black p-4 rounded-lg">
+                  <ul className=" space-y-2">
                     <li>
                       <strong>Phone:</strong> +961 71 432 362 or +971 50 275 9139
                     </li>
